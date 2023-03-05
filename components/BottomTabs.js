@@ -19,13 +19,13 @@ const HomeTabs = () => {
           position: "absolute",
           borderTopLeftRadius: 25,
           borderTopRightRadius: 25,
-          height: 20,
+          height: 70,
           backgroundColor: Colors.DEFAULT_PINK,
           borderTopWidth: 0,
         },
         tabBarShowLabel: false,
-        tabBarActiveTintColor: Colors.DEFAULT_GREEN,
-        tabBarInactiveTintColor: Colors.INACTIVE_GREY,
+        tabBarActiveTintColor: Colors.DEFAULT_WHITE,
+        tabBarInactiveTintColor: Colors.DEFAULT_BLACK,
       }}
     >
       <BottomTabs.Screen
@@ -46,6 +46,41 @@ const HomeTabs = () => {
           ),
         }}
       />
+      <BottomTabs.Screen
+        name="/"
+        component={ProductReviewScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <View
+              style={{
+                backgroundColor: Colors.DEFAULT_PINK,
+                justifyContent: "center",
+                alignItems: "center",
+                width: 100,
+                height: 100,
+                borderRadius: "100vh",
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: Colors.DEFAULT_YELLOW,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 80,
+                  height: 80,
+                  borderRadius: "100vh",
+                }}
+              >
+                <IonIcons name="add" size={30} color={color} />
+                <View>
+                  <Text>Đăng tin</Text>
+                </View>
+              </View>
+            </View>
+          ),
+        }}
+      />
+
       <BottomTabs.Screen
         name="caregory"
         component={CategoryScreen}

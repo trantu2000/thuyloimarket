@@ -19,10 +19,8 @@ const Navigators = () => {
   return (
     <NavigationContainer>
       <Stask.Navigator screenOptions={{ headerShown: false }}>
-        <Stask.Screen name="Splash" component={SplashScreen} />
+        {/* <Stask.Screen name="Splash" component={SplashScreen} /> */}
         {/* <Stask.Screen name="first" component={FirstScreen} /> */}
-        <Stask.Screen name="login" component={LoginScreen} />
-        <Stask.Screen name="register" component={RegisterScreen} />
 
         <Stask.Screen name="HomeTabs" component={HomeTabs} />
         <Stask.Screen name="HomeScreen" component={HomeScreen} />
@@ -30,6 +28,8 @@ const Navigators = () => {
         <Stask.Screen name="product" component={ProductScreen} />
         <Stask.Screen name="products" component={ProductsScreen} />
         <Stask.Screen name="review" component={ProductReviewScreen} />
+        <Stask.Screen name="login" component={LoginScreen} />
+        <Stask.Screen name="register" component={RegisterScreen} />
       </Stask.Navigator>
     </NavigationContainer>
   );

@@ -1,6 +1,7 @@
 //tran tu
 import {
   Image,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -59,45 +60,43 @@ const HomeScreen = () => {
           style={{ marginRight: 10, marginTop: 20 }}
         />
       </View>
-
-      <View style={{ flex: 1, width: "100%", height: 80 }}>
-        <Swiper
-          containerStyle={styles.wrapper}
-          showsButtons={false}
-          loop={true}
-          autoplay={true}
-          paginationStyle={false}
-          showsPagination={false}
-        >
-          <View style={styles.slide}>
-            <Image
-              style={styles.image}
-              source={require("../images/banners/banner_one.jpg")}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              style={styles.image}
-              source={require("../images/banners/banner_two.jpg")}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              style={styles.image}
-              source={require("../images/banners/banner_three.jpg")}
-            />
-          </View>
-          <View style={styles.slide}>
-            <Image
-              style={styles.image}
-              source={require("../images/banners/banner_four.jpg")}
-            />
-          </View>
-        </Swiper>
-      </View>
-      <View style={{ width: "100%", height: 510 }}>
-        <Text>Home</Text>
-      </View>
+      <ScrollView>
+        <View style={{ flex: 1, width: "100%", height: 120 }}>
+          <Swiper
+            containerStyle={styles.wrapper}
+            showsButtons={false}
+            loop={true}
+            autoplay={true}
+            paginationStyle={false}
+            showsPagination={false}
+          >
+            <View style={styles.slide}>
+              <Image
+                style={styles.image}
+                source={require("../images/banners/banner_one.jpg")}
+              />
+            </View>
+            <View style={styles.slide}>
+              <Image
+                style={styles.image}
+                source={require("../images/banners/banner_two.jpg")}
+              />
+            </View>
+            <View style={styles.slide}>
+              <Image
+                style={styles.image}
+                source={require("../images/banners/banner_three.jpg")}
+              />
+            </View>
+            <View style={styles.slide}>
+              <Image
+                style={styles.image}
+                source={require("../images/banners/banner_four.jpg")}
+              />
+            </View>
+          </Swiper>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -148,7 +147,7 @@ const styles = StyleSheet.create({
     color: Colors.DEFAULT_BLACK,
     flex: 1,
   },
-  wrapper: { width: "100%", height: 80 },
+  wrapper: {},
   slide: {
     flex: 1,
     justifyContent: "center",

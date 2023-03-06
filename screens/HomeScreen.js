@@ -74,6 +74,61 @@ const dataPostProducts = [
     price: "200.000",
     time: "1 ngày trước",
   },
+  {
+    id: "7",
+    source: {
+      uri: "https://imaxmobile.vn/media/data/iphone-8-plus-64GB-cu-5.jpg",
+    },
+    title: "Cần bán iphone 8 plus ",
+    price: "2.500.000",
+    time: "hôm qua",
+  },
+  {
+    id: "8",
+    source: {
+      uri: "https://filebroker-cdn.lazada.vn/kf/S35d38b24ffb340829a6eb2ffdd6953d2k.jpg",
+    },
+    title: "Bán quạt",
+    price: "150.000",
+    time: "2 ngày trước",
+  },
+  {
+    id: "9",
+    source: {
+      uri: "https://kiemtraxecu.com/wp-content/uploads/2019/08/wave-cu.jpg",
+    },
+    title: "Bán xe wave alpha",
+    price: "5.000.000",
+    time: "2 ngày trước",
+  },
+  {
+    id: "10",
+    source: {
+      uri: "https://muabandonghothuysy.com/wp-content/uploads/2020/04/longines-l4.778.8.12.0-6-767x1024.jpg",
+    },
+    title: "đồng hồ",
+    price: "300.000",
+    time: "5 ngày trước",
+  },
+  {
+    id: "11",
+    source: {
+      uri: "https://my-test-11.slatic.net/p/e408f7184807efa1e228f8c600b27239.jpg",
+    },
+    title: "pass lại đôi giày",
+    price: "250.000",
+    time: "5 ngày trước",
+  },
+
+  {
+    id: "12",
+    source: {
+      uri: "https://cf.shopee.vn/file/bd8c7f85886064dafd6bf4f2896982b2",
+    },
+    title: "pass lại áo sơ 80%",
+    price: "200.000",
+    time: "1 ngày trước",
+  },
 ];
 
 const HomeScreen = () => {
@@ -103,19 +158,22 @@ const HomeScreen = () => {
             />
           </View>
         </View>
-
-        <Feather
-          name="bell"
-          size={25}
-          color={Colors.DEFAULT_BLACK}
-          style={{ marginRight: 5, marginTop: 40 }}
-        />
-        <IonIcons
-          name="chatbox-ellipses-outline"
-          size={25}
-          color={Colors.DEFAULT_BLACK}
-          style={{ marginRight: 5, marginTop: 40 }}
-        />
+        <TouchableWithoutFeedback>
+          <Feather
+            name="bell"
+            size={25}
+            color={Colors.DEFAULT_BLACK}
+            style={{ marginRight: 5, marginTop: 40 }}
+          />
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback>
+          <IonIcons
+            name="chatbox-ellipses-outline"
+            size={25}
+            color={Colors.DEFAULT_BLACK}
+            style={{ marginRight: 5, marginTop: 40 }}
+          />
+        </TouchableWithoutFeedback>
       </View>
       <ScrollView>
         <View style={{ flex: 1, width: "100%", height: 120 }}>

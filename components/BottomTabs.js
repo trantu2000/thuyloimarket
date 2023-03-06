@@ -20,7 +20,7 @@ const HomeTabs = () => {
           position: "absolute",
           borderTopLeftRadius: 25,
           borderTopRightRadius: 25,
-          height: 70,
+          height: 60,
           backgroundColor: Colors.DEFAULT_PINK,
           borderTopWidth: 0,
         },

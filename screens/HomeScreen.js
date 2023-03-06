@@ -2,7 +2,6 @@
 import {
   FlatList,
   Image,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -16,13 +15,16 @@ import Feather from "react-native-vector-icons/Feather";
 import Swiper from "react-native-swiper";
 import Images from "../constants/Images";
 import PostProductItem from "../components/PostProductItem";
+import { ScrollView } from 'react-native-virtualized-view';
 
 const dataPostProducts = [
   {
     id: "1",
-    source: `${require("../images/postproduct/iphone.jpg")}`,
-    title: "Cần bán iphone 14 ",
-    price: "5.500.000",
+    source: {
+      uri: "https://imaxmobile.vn/media/data/iphone-8-plus-64GB-cu-5.jpg",
+    },
+    title: "Cần bán iphone 8 plus ",
+    price: "2.500.000",
     time: "hôm qua",
   },
   {
@@ -108,7 +110,7 @@ const HomeScreen = () => {
           style={{ marginRight: 10, marginTop: 40 }}
         />
       </View>
-      <ScrollView>
+      <ScrollView >
         <View style={{ flex: 1, width: "100%", height: 120 }}>
           <Swiper
             containerStyle={styles.wrapper}
@@ -144,25 +146,18 @@ const HomeScreen = () => {
             </View>
           </Swiper>
         </View>
-        <View style={styles.main}>
-          <View style={styles.title}>
-            <Text style={styles.content}>Tin đăng dành cho bạn</Text>
-          </View>
-          {/* product */}
-          <View style={styles.mainContainer}>
-            <FlatList
-              data={dataPostProducts}
-              numColumns={2}
-              keyExtractor={(item) => item?.id}
-              renderItem={({ item }) => (
-                <PostProductItem
-                  postproduct={item}
-                  {...item}
-                  navigate={() => navigation.navigate("RestaurantScreen")}
-                />
-              )}
-            />
-          </View>
+
+        {/* product */}
+        <View style={styles.title}>
+          <Text style={styles.content}>Tin đăng dành cho bạn</Text>
+        </View>
+        <View style={styles.mainContainer}>
+          <FlatList
+            data={dataPostProducts}
+            numColumns={2}
+            keyExtractor={(item) => item?.id}
+            renderItem={({ item }) => <PostProductItem postproduct={item} />}
+          />
         </View>
       </ScrollView>
     </View>
@@ -237,7 +232,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
   },
-  main: {},
+
   title: {
     width: "100%",
     height: 40,
@@ -253,8 +248,5 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     marginHorizontal: 10,
-    flex: 1,
-    // flexDirection: "row",
-    justifyContent: "center",
   },
 });

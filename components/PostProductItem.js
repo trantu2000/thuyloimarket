@@ -16,11 +16,7 @@ const PostProductItem = ({ postproduct }) => {
           />
         </View>
         <TouchableOpacity>
-          <Image
-            style={styles.image}
-            source={postproduct.source}
-            // source={require("../images/postproduct/iphone.jpg")}
-          />
+          <Image style={styles.image} source={postproduct.source} />
         </TouchableOpacity>
 
         <View style={styles.titlePostProduct}>

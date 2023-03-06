@@ -20,30 +20,56 @@ import PostProductItem from "../components/PostProductItem";
 const dataPostProducts = [
   {
     id: "1",
-    source:`${require("../images/postproduct/iphone.jpg")}`,
+    source: `${require("../images/postproduct/iphone.jpg")}`,
     title: "Cần bán iphone 14 ",
-    price:"5.500.000",
-    time:"hôm qua"
+    price: "5.500.000",
+    time: "hôm qua",
   },
   {
     id: "2",
-    title: "Second Item",
+    source: {
+      uri: "https://filebroker-cdn.lazada.vn/kf/S35d38b24ffb340829a6eb2ffdd6953d2k.jpg",
+    },
+    title: "Bán quạt",
+    price: "150.000",
+    time: "2 ngày trước",
   },
   {
     id: "3",
-    title: "Third Item",
+    source: {
+      uri: "https://kiemtraxecu.com/wp-content/uploads/2019/08/wave-cu.jpg",
+    },
+    title: "Bán xe wave alpha",
+    price: "5.000.000",
+    time: "2 ngày trước",
   },
   {
     id: "4",
-    title: "Third Item",
+    source: {
+      uri: "https://muabandonghothuysy.com/wp-content/uploads/2020/04/longines-l4.778.8.12.0-6-767x1024.jpg",
+    },
+    title: "đồng hồ",
+    price: "300.000",
+    time: "5 ngày trước",
   },
   {
     id: "5",
-    title: "Third Item",
+    source: {
+      uri: "https://my-test-11.slatic.net/p/e408f7184807efa1e228f8c600b27239.jpg",
+    },
+    title: "pass lại đôi giày",
+    price: "250.000",
+    time: "5 ngày trước",
   },
+
   {
     id: "6",
-    title: "Third Item",
+    source: {
+      uri: "https://cf.shopee.vn/file/bd8c7f85886064dafd6bf4f2896982b2",
+    },
+    title: "pass lại áo sơ 80%",
+    price: "200.000",
+    time: "1 ngày trước",
   },
 ];
 
@@ -129,7 +155,8 @@ const HomeScreen = () => {
               numColumns={2}
               keyExtractor={(item) => item?.id}
               renderItem={({ item }) => (
-                <PostProductItem postproduct={item}
+                <PostProductItem
+                  postproduct={item}
                   {...item}
                   navigate={() => navigation.navigate("RestaurantScreen")}
                 />

@@ -6,16 +6,23 @@ import IonIcons from "react-native-vector-icons/Ionicons";
 
 const PostProductItem = ({ postproduct }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <View>
         <View style={styles.bookmarkIcon}>
-          <IonIcons name="bookmark-outline" size={20} style={{color:Colors.DEFAULT_RED}}/>
+          <IonIcons
+            name="bookmark-outline"
+            size={23}
+            style={{ color: Colors.DEFAULT_RED }}
+          />
         </View>
-        <Image
-          style={styles.image}
-          source={postproduct.source}
-          // source={require("../images/postproduct/iphone.jpg")}
-        />
+        <TouchableOpacity>
+          <Image
+            style={styles.image}
+            source={postproduct.source}
+            // source={require("../images/postproduct/iphone.jpg")}
+          />
+        </TouchableOpacity>
+
         <View style={styles.titlePostProduct}>
           <Text style={styles.titleContent}>{postproduct.title}</Text>
           <IonIcons name="list" size={19} />
@@ -27,7 +34,7 @@ const PostProductItem = ({ postproduct }) => {
           <Text style={styles.time}>{postproduct.time}</Text>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
@@ -70,7 +77,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 10,
   },
-  bookmarkIcon:{
-    
-  }
+  bookmarkIcon: {
+    position: "absolute",
+    top: "85%",
+    left: "80%",
+    zIndex: 1,
+  },
 });

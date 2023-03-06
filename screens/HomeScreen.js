@@ -15,7 +15,8 @@ import Feather from "react-native-vector-icons/Feather";
 import Swiper from "react-native-swiper";
 import Images from "../constants/Images";
 import PostProductItem from "../components/PostProductItem";
-import { ScrollView } from 'react-native-virtualized-view';
+import { ScrollView } from "react-native-virtualized-view";
+import IonIcons from "react-native-vector-icons/Ionicons";
 
 const dataPostProducts = [
   {
@@ -107,10 +108,16 @@ const HomeScreen = () => {
           name="bell"
           size={25}
           color={Colors.DEFAULT_BLACK}
-          style={{ marginRight: 10, marginTop: 40 }}
+          style={{ marginRight: 5, marginTop: 40 }}
+        />
+        <IonIcons
+          name="chatbox-ellipses-outline"
+          size={25}
+          color={Colors.DEFAULT_BLACK}
+          style={{ marginRight: 5, marginTop: 40 }}
         />
       </View>
-      <ScrollView >
+      <ScrollView>
         <View style={{ flex: 1, width: "100%", height: 120 }}>
           <Swiper
             containerStyle={styles.wrapper}

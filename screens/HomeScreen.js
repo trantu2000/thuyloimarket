@@ -17,6 +17,7 @@ import Images from "../constants/Images";
 import PostProductItem from "../components/PostProductItem";
 import { ScrollView } from "react-native-virtualized-view";
 import IonIcons from "react-native-vector-icons/Ionicons";
+import CategoryItem from "../components/CategoryItem";
 
 const dataPostProducts = [
   {
@@ -131,6 +132,59 @@ const dataPostProducts = [
   },
 ];
 
+const dataCateGories = [
+  {
+    id: "1",
+    source: `${require("../images/categories/do-dien-tu.png")}`,
+    title: "Đồ  điện tử",
+  },
+  {
+    id: "2",
+    source: `${require("../images/categories/cho-tot-xe.png")}`,
+    title: "Xe cộ",
+  },
+  {
+    id: "3",
+    source: `${require("../images/categories/do-van-phong.png")}`,
+    title: "Văn phòng",
+  },
+  {
+    id: "4",
+    source: `${require("../images/categories/dich-vu-du-lich.png")}`,
+    title: "Dịch vụ,du lịch",
+  },
+  {
+    id: "5",
+    source: `${require("../images/categories/noi-ngoai-that.png")}`,
+    title: "Gia dụng, nội thất",
+  },
+  {
+    id: "6",
+    source: `${require("../images/categories/thu-cung.png")}`,
+    title: "Thú cưng",
+  },
+  {
+    id: "7",
+    source: `${require("../images/categories/viec-lam.png")}`,
+    title: "Việc làm",
+  },
+  {
+    id: "8",
+    source: `${require("../images/categories/thoi-trang-do-dung-ca-nhan.png")}`,
+    title: "Thời trang",
+  },
+  {
+    id: "9",
+    source: `${require("../images/categories/cho-tang-mien-phi.png")}`,
+    title: "Cho tặng miễn phí",
+  },
+  {
+    id: "10",
+    source: `${require("../images/categories/tat-ca-danh-muc.png")}`,
+    title: "Tất cả danh mục",
+  },
+];
+
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
@@ -212,7 +266,18 @@ const HomeScreen = () => {
           </Swiper>
         </View>
 
-        {/* product */}
+        <View style={styles.title}>
+          <Text style={styles.content}>Khám phá danh mục</Text>
+        </View>
+        <View style={styles.mainContainer}>
+          <FlatList
+            data={dataCateGories}
+            horizontal={true}
+            keyExtractor={(item) => item?.id}
+            renderItem={({ item }) => <CategoryItem postproduct={item} />}
+          />
+        </View>
+
         <View style={styles.title}>
           <Text style={styles.content}>Tin đăng dành cho bạn</Text>
         </View>

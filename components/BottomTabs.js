@@ -7,6 +7,7 @@ import ProductReviewScreen from "../screens/ProductReviewScreen";
 import CategoryScreen from "../screens/CategoryScreen";
 import ProductScreen from "../screens/ProductScreen";
 import HomeScreen from "../screens/HomeScreen";
+import LoginScreen from "../screens/auth/LoginScreen";
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -47,8 +48,8 @@ const HomeTabs = () => {
         }}
       />
       <BottomTabs.Screen
-        name="/"
-        component={ProductReviewScreen}
+        name="login"
+        component={LoginScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <View
@@ -58,7 +59,7 @@ const HomeTabs = () => {
                 alignItems: "center",
                 width: 100,
                 height: 100,
-                borderRadius: "100vh",
+                borderRadius: 100,
               }}
             >
               <View
@@ -68,7 +69,7 @@ const HomeTabs = () => {
                   alignItems: "center",
                   width: 80,
                   height: 80,
-                  borderRadius: "100vh",
+                  borderRadius: 100,
                 }}
               >
                 <IonIcons name="add" size={30} color={color} />

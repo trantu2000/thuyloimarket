@@ -1,5 +1,6 @@
 //tran tu
 import {
+  FlatList,
   Image,
   ScrollView,
   StatusBar,
@@ -14,16 +15,37 @@ import Colors from "../constants/Colors";
 import Feather from "react-native-vector-icons/Feather";
 import Swiper from "react-native-swiper";
 import Images from "../constants/Images";
+import PostProductItem from "../components/PostProductItem";
 
-const renderPagination = (index, total, context) => {
-  return (
-    <View style={styles.paginationStyle}>
-      <Text style={{ color: "grey" }}>
-        <Text style={styles.paginationText}>{index + 1}</Text>/{total}
-      </Text>
-    </View>
-  );
-};
+const dataPostProducts = [
+  {
+    id: "1",
+    source:`${require("../images/postproduct/iphone.jpg")}`,
+    title: "Cần bán iphone 14 ",
+    price:"5.500.000",
+    time:"hôm qua"
+  },
+  {
+    id: "2",
+    title: "Second Item",
+  },
+  {
+    id: "3",
+    title: "Third Item",
+  },
+  {
+    id: "4",
+    title: "Third Item",
+  },
+  {
+    id: "5",
+    title: "Third Item",
+  },
+  {
+    id: "6",
+    title: "Third Item",
+  },
+];
 
 const HomeScreen = () => {
   return (
@@ -57,7 +79,7 @@ const HomeScreen = () => {
           name="bell"
           size={25}
           color={Colors.DEFAULT_BLACK}
-          style={{ marginRight: 10, marginTop: 20 }}
+          style={{ marginRight: 10, marginTop: 40 }}
         />
       </View>
       <ScrollView>
@@ -96,6 +118,25 @@ const HomeScreen = () => {
             </View>
           </Swiper>
         </View>
+        <View style={styles.main}>
+          <View style={styles.title}>
+            <Text style={styles.content}>Tin đăng dành cho bạn</Text>
+          </View>
+          {/* product */}
+          <View style={styles.mainContainer}>
+            <FlatList
+              data={dataPostProducts}
+              numColumns={2}
+              keyExtractor={(item) => item?.id}
+              renderItem={({ item }) => (
+                <PostProductItem postproduct={item}
+                  {...item}
+                  navigate={() => navigation.navigate("RestaurantScreen")}
+                />
+              )}
+            />
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -106,14 +147,11 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
-    //   backgroundColor: Colors.DEFAULT_PINK,
   },
   backgroundCurvedContainer: {
     flexDirection: "row",
     backgroundColor: Colors.DEFAULT_PINK,
-    height: 80,
+    height: 90,
     position: "relative",
     display: "flex",
     justifyContent: "center",
@@ -127,7 +165,7 @@ const styles = StyleSheet.create({
     height: 35,
     backgroundColor: Colors.LIGHT_GREY,
     paddingHorizontal: 10,
-    marginTop: 20,
+    marginTop: 40,
     marginHorizontal: 10,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -171,5 +209,25 @@ const styles = StyleSheet.create({
   paginationText: {
     color: "white",
     fontSize: 20,
+  },
+  main: {},
+  title: {
+    width: "100%",
+    height: 40,
+    justifyContent: "center",
+    backgroundColor: Colors.LIGHT_GREY,
+    marginVertical: 5,
+  },
+  content: {
+    color: Colors.DEFAULT_BLACK,
+    fontSize: 16,
+    fontWeight: 600,
+    padding: 10,
+  },
+  mainContainer: {
+    marginHorizontal: 10,
+    flex: 1,
+    // flexDirection: "row",
+    justifyContent: "center",
   },
 });
